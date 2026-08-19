@@ -1,0 +1,63 @@
+get:
+  tags:
+    - Station
+  summary: Get station by ID
+  operationId: getStationById
+  parameters:
+    - in: path
+      name: id
+      required: true
+      schema:
+        type: integer
+        format: int64
+  responses:
+    "200":
+      description: Station found
+      content:
+        application/json:
+          schema:
+            $ref: '../../schemas/station-response.yaml'
+
+put:
+  tags:
+    - Station
+  summary: Update station
+  operationId: updateStation
+  parameters:
+    - in: path
+      name: id
+      required: true
+      schema:
+        type: integer
+        format: int64
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: '../../schemas/station-request.yaml'
+  responses:
+    "200":
+      description: Station updated
+      content:
+        application/json:
+          schema:
+            $ref: '../../schemas/station-response.yaml'
+
+
+
+delete:
+  tags:
+    - Station
+  summary: Delete station
+  operationId: deleteStation
+  parameters:
+    - in: path
+      name: id
+      required: true
+      schema:
+        type: integer
+        format: int64
+  responses:
+    "204":
+      description: Station deleted

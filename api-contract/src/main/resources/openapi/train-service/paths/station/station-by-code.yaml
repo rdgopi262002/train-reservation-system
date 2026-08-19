@@ -1,0 +1,18 @@
+get:
+  tags:
+    - Station
+  summary: Get station by code
+  operationId: getStationByCode
+  parameters:
+    - in: path
+      name: code
+      required: true
+      schema:
+        type: string
+  responses:
+    "200":
+      description: Station found by code
+      content:
+        application/json:
+          schema:
+            $ref: '../../schemas/station-response.yaml'

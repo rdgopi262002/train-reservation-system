@@ -1,0 +1,11 @@
+package com.gopi.trainservice.Enum;
+
+public enum RailwayZone {
+    SOUTHERN_RAILWAY,
+    CENTRAL_RAILWAY,
+    SOUTH_COASTAL_RAILWAY,
+    NORTH_COASTAL_RAILWAY,
+    SOUTH_CENTRAL_RAILWAY,
+    NORTH_CENTRAL_RAILWAY,
+    EAST_COASTAL_RAILWAY
+}

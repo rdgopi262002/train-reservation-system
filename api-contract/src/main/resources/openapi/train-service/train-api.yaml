@@ -1,0 +1,32 @@
+openapi: 3.0.3
+
+info:
+  title: Train Service API
+  version: 1.0.0
+  description: Train Reservation System - Train Service
+
+servers:
+  - url: http://localhost:8080
+
+paths:
+
+  /stations:
+
+    $ref: './paths/station/stations.yaml'
+
+  /stations/{id}:
+     $ref: './paths/station/station-by-id.yaml'
+
+  /stations/code/{code}:
+     $ref: './paths/station/station-by-code.yaml'
+
+
+
+components:
+  schemas:
+
+    StationRequest:
+      $ref: './schemas/station-request.yaml'
+
+    StationResponse:
+      $ref: './schemas/station-response.yaml'

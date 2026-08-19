@@ -1,0 +1,65 @@
+post:
+  tags:
+    - Station
+
+  summary: Create Station
+  operationId: createStation
+
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: '../../schemas/station-request.yaml'
+
+  responses:
+
+    '201':
+      description: Station Created
+
+      content:
+        application/json:
+          schema:
+            $ref: '../../schemas/station-response.yaml'
+
+
+
+get:
+  tags:
+    - Station
+  summary: Get all stations (paginated)
+  operationId: getAllStations
+  parameters:
+    - in: query
+      name: page
+      schema:
+        type: integer
+        default: 0
+    - in: query
+      name: size
+      schema:
+        type: integer
+        default: 10
+    - in: query
+      name: sort
+      schema:
+        type: string
+        example: "id,asc"
+  responses:
+    "200":
+      description: List of stations
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              content:
+                type: array
+                items:
+                  $ref: '../../schemas/station-response.yaml'
+              totalElements:
+                type: integer
+              totalPages:
+                type: integer
+              number:
+                type: integer

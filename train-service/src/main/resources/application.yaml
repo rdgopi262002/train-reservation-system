@@ -1,0 +1,33 @@
+server:
+  port: 8081
+  error:
+    include-message: always
+    include-stacktrace: always
+
+spring:
+  application:
+    name: TRAIN-SERVICE
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/train_db
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+  sql:
+    init:
+      mode: never
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+
